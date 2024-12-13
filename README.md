@@ -1,0 +1,1 @@
+# LottoPGF Metadata Registry
