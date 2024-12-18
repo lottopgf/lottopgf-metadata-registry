@@ -52,7 +52,7 @@ const config: HardhatUserConfig = {
         runOnCompile: true,
         clear: true,
         flat: true,
-        only: ['LottoPGFMetadataRegistry'],
+        only: ['LottoPGFMetadataRegistry', 'LooteryDeploymentHelper'],
         except: ['test/*'],
     },
 }
