@@ -21,16 +21,16 @@ async function main() {
     console.log(`LooteryDeploymentHelper deployed at: ${await deploymentHelper.getAddress()}`)
 
     // Verify all
-    // await run(
-    //     {
-    //         scope: 'ignition',
-    //         task: 'verify',
-    //     },
-    //     {
-    //         // Not sure this is stable, but works for now
-    //         deploymentId: `chain-${chainId.toString()}`,
-    //     },
-    // )
+    await run(
+        {
+            scope: 'ignition',
+            task: 'verify',
+        },
+        {
+            // Not sure this is stable, but works for now
+            deploymentId: `chain-${chainId.toString()}`,
+        },
+    )
 }
 
 main()

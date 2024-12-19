@@ -12,4 +12,8 @@ interface ILootery {
         string calldata displayName,
         bool isBeneficiary
     ) external returns (bool didMutate);
+
+    /// @notice Set this game as the last game of the lottery.
+    ///     aka invoke apocalypse mode.
+    function kill() external;
 }

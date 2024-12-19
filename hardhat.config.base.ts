@@ -8,12 +8,12 @@ const configWithNetwork: HardhatUserConfig = {
         base: {
             chainId: 8453,
             url: process.env.BASE_URL as string,
-            accounts: [process.env.MAINNET_PK as string],
+            accounts: [process.env.LOTTOPGF_METADATA_MAPPER_DEPLOYER_PK as string],
         },
         baseSepolia: {
             chainId: 84532,
             url: process.env.BASE_SEPOLIA_URL as string,
-            accounts: [process.env.MAINNET_PK as string],
+            accounts: [process.env.LOTTOPGF_METADATA_MAPPER_DEPLOYER_PK as string],
         },
     },
     etherscan: {

@@ -95,6 +95,11 @@
         "internalType": "string",
         "name": "uri",
         "type": "string"
+      },
+      {
+        "internalType": "bool",
+        "name": "activateApocalypseMode",
+        "type": "bool"
       }
     ],
     "name": "deployLooteryWithMetadata",

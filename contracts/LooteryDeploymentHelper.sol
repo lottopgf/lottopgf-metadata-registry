@@ -62,10 +62,13 @@ contract LooteryDeploymentHelper is ITypeAndVersion {
     /// @param beneficiaries Beneficiaries. In case of duplicate addresses,
     ///     the last beneficiary with that address will be used.
     /// @param uri URI pointing to metadata
+    /// @param activateApocalypseMode If true, apocalypse mode will be
+    ///     activated immediately.
     function deployLooteryWithMetadata(
-        DeployParams memory params,
+        DeployParams calldata params,
         ILottoPGFMetadataRegistry.Beneficiary[] calldata beneficiaries,
-        string calldata uri
+        string calldata uri,
+        bool activateApocalypseMode
     ) external returns (address) {
         address looteryProxy = _deployLootery(params);
 
@@ -75,6 +78,10 @@ contract LooteryDeploymentHelper is ITypeAndVersion {
                 beneficiaries[i].name,
                 true
             );
+        }
+
+        if (activateApocalypseMode) {
+            ILootery(looteryProxy).kill();
         }
 
         ILottoPGFMetadataRegistry(metadataRegistry).setLooteryMetadata(
